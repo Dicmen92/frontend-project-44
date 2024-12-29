@@ -9,3 +9,9 @@ publish:
 
 readlineSync:
   npm install readline-sync
+
+lint:
+	npx eslint
+
+make lint:
+  npx eslint

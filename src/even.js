@@ -37,8 +37,7 @@ export default function checkParity() {
       console.log('Correct!');
       result += 1;
     } else {
-      console.log("'yes' is wrong answer ;(. Correct answer was 'no'.");
-      console.log(`Let's try again, ${name}!`);
+      console.log(`'yes' is wrong answer ;(. Correct answer was 'no'.\nLet's try again, ${name}!`);
       break;
     }
   }

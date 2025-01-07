@@ -20,7 +20,7 @@ export function makingGame() {
       exam = numOne;
     }
     
-    
+
 
     const answer = readlineSync.question('Your answer: ');
 
@@ -35,3 +35,18 @@ export function makingGame() {
   }
   return result;
 }
+
+// /*Запросить 2 числа и найти только наибольший общий делитель.*/
+
+// const nod = (n, m) => {
+//   if (m !== 0) {
+//     const k = n % m;
+//     return nod(m, k);
+//   }
+//   return n;
+// };
+
+// alert('Введите 2 число, что бы найти НОД')
+// let numb1 = prompt('Введите первое число');
+// let numb2 = prompt('Введите второе число');
+// alert('НОД чисел ' + numb1 + ' и ' + numb2 + ' будет: ' + nod(numb1, numb2));

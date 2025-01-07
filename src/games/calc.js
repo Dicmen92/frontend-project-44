@@ -1,25 +1,15 @@
 import readlineSync from 'readline-sync';
+import { name, numRandom } from '../index.js';
 
-export default function findMathOperation() {
-  // поиск случайного числа
-  const numRandom = () => {
-    const numLimit = 100;
-    return Math.floor(Math.random() * numLimit);
-  };
+export const question = 'What is the result of the expression?';
 
-  // переменная для записи результа четности/нечетности
-  let exam = '';
-
+export function makingGame() {
+  // переменная для записи результа
+  let exam = 0;
   // переменная для проверки успешного выполнения условия игры
   let result = 0;
 
-  // начинаем игру "brain-calc"
-  const name = readlineSync.question('May I have your name? ');
-  console.log(`Hello, ${name}!`);
-  console.log('What is the result of the expression?');
-
   for (let i = 0; i < 3; i += 1) {
-    // присваиваем числу результат функции numRandom()
     const numOne = numRandom();
     const numTwo = numRandom();
     let sign = numRandom();
@@ -53,8 +43,5 @@ export default function findMathOperation() {
       break;
     }
   }
-
-  if (result === 3) {
-    console.log(`Congratulations, ${name}!`);
-  }
+  return result;
 }

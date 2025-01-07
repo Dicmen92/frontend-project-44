@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import checkParity from '../src/even.js';
+import { question, makingGame } from '../src/games/even.js';
+import implementationOfLogic from '../src/index.js';
 
-console.log('Welcome to the Brain Games!');
-checkParity();
+implementationOfLogic(question, makingGame);

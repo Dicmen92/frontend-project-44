@@ -1,22 +1,13 @@
 import readlineSync from 'readline-sync';
+import { name, numRandom } from '../index.js';
 
-export default function checkParity() {
-  // поиск случайного числа
-  const numRandom = () => {
-    const numLimit = 100;
-    return Math.floor(Math.random() * numLimit);
-  };
+export const question = 'Answer "yes" if the number is even, otherwise answer "no".';
 
-  // переменная для записи результа четности/нечетности
-  let exam = '';
-
+export function makingGame() {
+  // переменная для записи результа
+  let exam = 0;
   // переменная для проверки успешного выполнения условия игры
   let result = 0;
-
-  // начинаем игру "brain-even"
-  const name = readlineSync.question('May I have your name? ');
-  console.log(`Hello, ${name}!`);
-  console.log('Answer "yes" if the number is even, otherwise answer "no".');
 
   for (let i = 0; i < 3; i += 1) {
     // присваиваем числу результат функции numRandom()
@@ -41,8 +32,5 @@ export default function checkParity() {
       break;
     }
   }
-
-  if (result === 3) {
-    console.log(`Congratulations, ${name}!`);
-  }
+  return result;
 }

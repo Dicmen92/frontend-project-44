@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import findMathOperation from '../src/calc.js';
+import { question, makingGame } from '../src/games/calc.js';
+import implementationOfLogic from '../src/index.js';
 
-console.log('Welcome to the Brain Games!');
-findMathOperation();
+implementationOfLogic(question, makingGame);

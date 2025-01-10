@@ -15,12 +15,38 @@ export function makingGame() {
 
     console.log(`Question: ${numOne} ${numTwo}`);
 
-    // алгоритм Евклида
-    if (numTwo === 0) {
-      exam = numOne;
-    }
-    
+    let max = 0;
+    let min = 0;
 
+    // определяем из двух большее число
+    if (numOne > numTwo) {
+      max = numOne;
+      min = numTwo;
+    } else {
+      max = numTwo;
+      min = numOne;
+    }
+
+    // если большее число делится на меньшее без остатка, значит выводим тот результат
+    if (max % min === 0) {
+      exam = min;
+    } else {
+    // если большее число делится на меньшее без остатка, значит выводим тот результат
+      let temp = max % min;
+      // алгоритм Евклида
+      while (temp !== 0) {
+        exam = temp;
+        temp = min % temp;
+        if (temp !== 0) {
+          exam = temp;
+        }
+      }
+    }
+
+    // одно из чисел простое (делится только на само себя и единицу) - дополнительная проверка
+    if (max % exam !== 0 || min % exam !== 0) {
+      exam = 1;
+    }
 
     const answer = readlineSync.question('Your answer: ');
 
@@ -35,18 +61,3 @@ export function makingGame() {
   }
   return result;
 }
-
-// /*Запросить 2 числа и найти только наибольший общий делитель.*/
-
-// const nod = (n, m) => {
-//   if (m !== 0) {
-//     const k = n % m;
-//     return nod(m, k);
-//   }
-//   return n;
-// };
-
-// alert('Введите 2 число, что бы найти НОД')
-// let numb1 = prompt('Введите первое число');
-// let numb2 = prompt('Введите второе число');
-// alert('НОД чисел ' + numb1 + ' и ' + numb2 + ' будет: ' + nod(numb1, numb2));

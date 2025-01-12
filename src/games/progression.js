@@ -1,9 +1,9 @@
 import readlineSync from 'readline-sync';
 import { name, numRandom } from '../index.js';
 
-// Игра: "Калькулятор"
+// Игра "Арифметическая прогрессия"
 
-export const question = 'What is the result of the expression?';
+export const question = 'What number is missing in the progression?';
 
 export function makingGame() {
   // переменная для записи результа
@@ -11,28 +11,29 @@ export function makingGame() {
   // переменная для проверки успешного выполнения условия игры
   let result = 0;
 
+  // поиск случайного числа в диапозоне до 10
+  const numRandomTemp = () => {
+    const numLimit = 10;
+    return Math.floor(Math.random() * numLimit);
+  };
+
   for (let i = 0; i < 3; i += 1) {
     const numOne = numRandom();
-    const numTwo = numRandom();
-    let sign = numRandom();
+    const numTwo = numRandomTemp();
+    const arr = [];
 
-    if (sign <= 33) {
-      sign = '-';
-    } else if (sign > 33 && sign <= 66) {
-      sign = '+';
-    } else {
-      sign = '*';
+    exam = numOne;
+
+    for (let index = 0; index < 10; index += 1) {
+      exam += numTwo;
+      arr.push(exam);
     }
 
-    console.log(`Question: ${numOne} ${sign} ${numTwo}`);
+    console.log(`Question: ${arr}`);
 
-    if (sign === '-') {
-      exam = numOne - numTwo;
-    } else if (sign === '+') {
-      exam = numOne + numTwo;
-    } else {
-      exam = numOne * numTwo;
-    }
+    const temp = numRandomTemp();
+    console.log(temp);
+    console.log(arr[temp]);
 
     const answer = readlineSync.question('Your answer: ');
 

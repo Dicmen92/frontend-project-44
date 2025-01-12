@@ -1,6 +1,8 @@
 import readlineSync from 'readline-sync';
 import { name, numRandom } from '../index.js';
 
+// Игра "НОД"
+
 export const question = 'Find the greatest common divisor of given numbers.';
 
 export function makingGame() {

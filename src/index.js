@@ -1,5 +1,6 @@
 import requestName from './games/cli.js';
 
+// поиск случайного числа в диапозоне до 100
 export const numRandom = () => {
   const numLimit = 100;
   return Math.floor(Math.random() * numLimit);

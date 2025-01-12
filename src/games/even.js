@@ -1,6 +1,8 @@
 import readlineSync from 'readline-sync';
 import { name, numRandom } from '../index.js';
 
+// Игра: "Проверка на чётность"
+
 export const question = 'Answer "yes" if the number is even, otherwise answer "no".';
 
 export function makingGame() {

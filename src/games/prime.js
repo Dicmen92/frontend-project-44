@@ -21,6 +21,8 @@ export function makingGame() {
     // проверяем число, которое должно делятся без остатка только на 1 и на само себя
     if (numTemp === 1) {
       exam = 'yes';
+    } else if (numTemp === 0) {
+      exam = 'no';
     } else {
       for (let index = 2; index <= numTemp / 2; index += 1) {
         if (numTemp % index !== 0) {

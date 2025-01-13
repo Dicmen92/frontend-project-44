@@ -28,21 +28,21 @@ export function makingGame() {
       exam += numTwo;
       arr.push(exam);
     }
-
-    console.log(`Question: ${arr}`);
-
+    const arrShow = arr.concat([]);
     const temp = numRandomTemp();
-    console.log(temp);
-    console.log(arr[temp]);
+
+    arr[temp] = '..';
+
+    console.log(`Question: ${arr.join(' ')}`);
 
     const answer = readlineSync.question('Your answer: ');
 
     // проверяем полученный результат с вводом пользователя
-    if (Number(answer) === exam) {
+    if (Number(answer) === arrShow[temp]) {
       console.log('Correct!');
       result += 1;
     } else {
-      console.log(`'${answer}' is wrong answer ;(. Correct answer was '${exam}'.\nLet's try again, ${name}!`);
+      console.log(`'${answer}' is wrong answer ;(. Correct answer was '${arrShow[temp]}'.\nLet's try again, ${name}!`);
       break;
     }
   }

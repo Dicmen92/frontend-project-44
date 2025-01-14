@@ -41,9 +41,9 @@ export function makingGame() {
       // алгоритм Евклида
       while (temp !== 0) {
         exam = temp;
-        temp = max % temp;              
+        temp = max % temp;
         if (temp !== 0) {
-          exam = temp; 
+          exam = temp;
         }
       }
     }

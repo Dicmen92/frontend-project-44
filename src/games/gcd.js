@@ -32,6 +32,7 @@ export function makingGame() {
     // если большее число делится на меньшее без остатка, значит выводим тот результат
     if (max % min === 0) {
       exam = min;
+    // если одно из чисел равно 0, значит выводим соседнее число
     } else if (min === 0) {
       exam = max;
     } else {
@@ -40,9 +41,9 @@ export function makingGame() {
       // алгоритм Евклида
       while (temp !== 0) {
         exam = temp;
-        temp = min % temp;
+        temp = max % temp;              
         if (temp !== 0) {
-          exam = temp;
+          exam = temp; 
         }
       }
     }

@@ -10,7 +10,7 @@
     "brain-progression": "bin/brain-progression.js",
     "brain-prime": "bin/brain-prime.js"
   },
-  "description": "[![Actions Status](https://github.com/Dicmen92/frontend-project-44/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/Dicmen92/frontend-project-44/actions)",
+  "description": "A package for working with five mini-applications, including games such as: 1) calculator, 2) parity check, 3) finding GCD, 4) is a number prime?, 5) arithmetic progression",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -19,7 +19,7 @@
     "type": "git",
     "url": "git+https://github.com/Dicmen92/frontend-project-44.git"
   },
-  "author": "",
+  "author": "Babich Dmitriy",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Dicmen92/frontend-project-44/issues"

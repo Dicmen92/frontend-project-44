@@ -1,7 +1,6 @@
 #!/usr/bin/env node
-import { question, makingGame } from '../src/games/prime.js';
-import implementationOfLogic from '../src/index.js';
+import startPrimeGame from '../src/games/prime.js';
 
-implementationOfLogic(question, makingGame);
+startPrimeGame();
 
 // Игра "Простое ли число?"

@@ -1,5 +1,5 @@
 import readlineSync from 'readline-sync';
-import { name, numRandom } from '../index.js';
+import gameLoop, { name, numRandom } from '../index.js';
 
 // Игра "НОД"
 
@@ -65,4 +65,8 @@ export function makingGame() {
     }
   }
   return result;
+}
+
+export default function startGcdGame() {
+  gameLoop(question, makingGame);
 }

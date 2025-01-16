@@ -1,7 +1,6 @@
 #!/usr/bin/env node
-import { question, makingGame } from '../src/games/calc.js';
-import implementationOfLogic from '../src/index.js';
+import startCalcGame from '../src/games/calc.js';
 
-implementationOfLogic(question, makingGame);
+startCalcGame();
 
 // Игра: "Калькулятор"

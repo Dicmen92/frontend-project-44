@@ -9,7 +9,7 @@ export const numRandom = () => {
 console.log('Welcome to the Brain Games!');
 export const name = requestName();
 
-export default function implementationOfLogic(question, makingGame) {
+export const gameLoop = (question, makingGame) => {
   // начинаем игру
   console.log(question);
 
@@ -19,4 +19,6 @@ export default function implementationOfLogic(question, makingGame) {
   if (success === 3) {
     console.log(`Congratulations, ${name}!`);
   }
-}
+};
+
+export default gameLoop;

@@ -1,7 +1,6 @@
 #!/usr/bin/env node
-import { question, makingGame } from '../src/games/gcd.js';
-import implementationOfLogic from '../src/index.js';
+import startGcdGame from '../src/games/gcd.js';
 
-implementationOfLogic(question, makingGame);
+startGcdGame();
 
 // Игра "НОД"

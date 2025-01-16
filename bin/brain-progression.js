@@ -1,7 +1,6 @@
 #!/usr/bin/env node
-import { question, makingGame } from '../src/games/progression.js';
-import implementationOfLogic from '../src/index.js';
+import startProgresGame from '../src/games/progression.js';
 
-implementationOfLogic(question, makingGame);
+startProgresGame();
 
 // Игра "Арифметическая прогрессия"

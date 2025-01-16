@@ -1,11 +1,11 @@
 import readlineSync from 'readline-sync';
-import { name, numRandom } from '../index.js';
+import gameLoop, { name, numRandom } from '../index.js';
 
 // Игра: "Калькулятор"
 
-export const question = 'What is the result of the expression?';
+const question = 'What is the result of the expression?';
 
-export function makingGame() {
+function makingGame() {
   // переменная для записи результа
   let exam = 0;
   // переменная для проверки успешного выполнения условия игры
@@ -46,4 +46,8 @@ export function makingGame() {
     }
   }
   return result;
+}
+
+export default function startCalcGame() {
+  gameLoop(question, makingGame);
 }

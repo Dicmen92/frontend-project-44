@@ -1,7 +1,6 @@
 #!/usr/bin/env node
-import { question, makingGame } from '../src/games/even.js';
-import implementationOfLogic from '../src/index.js';
+import startEvenGame from '../src/games/even.js';
 
-implementationOfLogic(question, makingGame);
+startEvenGame();
 
 // Игра: "Проверка на чётность"

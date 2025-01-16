@@ -1,5 +1,5 @@
 import readlineSync from 'readline-sync';
-import { name, numRandom } from '../index.js';
+import gameLoop, { name, numRandom } from '../index.js';
 
 // Игра: "Проверка на чётность"
 
@@ -35,4 +35,8 @@ export function makingGame() {
     }
   }
   return result;
+}
+
+export default function startEvenGame() {
+  gameLoop(question, makingGame);
 }

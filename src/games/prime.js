@@ -1,5 +1,6 @@
 import readlineSync from 'readline-sync';
-import gameLoop, { name, numRandom } from '../index.js';
+import numRandom from '../utils/random.js';
+import gameLoop, { name } from '../index.js';
 
 // Игра "Простое ли число?"
 
@@ -13,7 +14,7 @@ export function makingGame() {
 
   for (let i = 0; i < 3; i += 1) {
     // присваиваем числу результат функции numRandom()
-    const numTemp = numRandom();
+    const numTemp = numRandom(0, 100);
 
     console.log(`Question: ${numTemp}`);
     const answer = readlineSync.question('Your answer: ');

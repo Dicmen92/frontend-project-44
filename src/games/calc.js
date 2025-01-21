@@ -1,5 +1,6 @@
 import readlineSync from 'readline-sync';
-import gameLoop, { name, numRandom } from '../index.js';
+import numRandom from '../utils/random.js';
+import gameLoop, { name } from '../index.js';
 
 // Игра: "Калькулятор"
 
@@ -12,9 +13,9 @@ function makingGame() {
   let result = 0;
 
   for (let i = 0; i < 3; i += 1) {
-    const numOne = numRandom();
-    const numTwo = numRandom();
-    let sign = numRandom();
+    const numOne = numRandom(0, 100);
+    const numTwo = numRandom(0, 100);
+    let sign = numRandom(0, 100);
 
     if (sign <= 33) {
       sign = '-';

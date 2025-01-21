@@ -1,5 +1,6 @@
 import readlineSync from 'readline-sync';
-import gameLoop, { name, numRandom } from '../index.js';
+import numRandom from '../utils/random.js';
+import gameLoop, { name } from '../index.js';
 
 // Игра "Арифметическая прогрессия"
 
@@ -11,15 +12,9 @@ export function makingGame() {
   // переменная для проверки успешного выполнения условия игры
   let result = 0;
 
-  // поиск случайного числа в диапозоне до 10
-  const numRandomTemp = () => {
-    const numLimit = 10;
-    return Math.floor(Math.random() * numLimit);
-  };
-
   for (let i = 0; i < 3; i += 1) {
-    const numOne = numRandom();
-    const numTwo = numRandomTemp();
+    const numOne = numRandom(0, 100);
+    const numTwo = numRandom(0, 10);
     const arr = [];
 
     exam = numOne;
@@ -29,7 +24,7 @@ export function makingGame() {
       arr.push(exam);
     }
     const arrShow = arr.concat([]);
-    const temp = numRandomTemp();
+    const temp = numRandom(0, 10);
 
     arr[temp] = '..';
 

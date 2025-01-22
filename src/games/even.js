@@ -1,41 +1,31 @@
-import readlineSync from 'readline-sync';
 import numRandom from '../utils/random.js';
-import gameLoop, { name } from '../index.js';
+import gameLoop from '../index.js';
 
 // Игра: "Проверка на чётность"
 
-export const question = 'Answer "yes" if the number is even, otherwise answer "no".';
+const question = 'Answer "yes" if the number is even, otherwise answer "no".';
 
-export function makingGame() {
+function makingGame() {
   // переменная для записи результа
   let exam = 0;
-  // переменная для проверки успешного выполнения условия игры
-  let result = 0;
-
+  
+ // Генерация 3 вопросов
   for (let i = 0; i < 3; i += 1) {
     // присваиваем числу результат функции numRandom()
-    const numTemp = numRandom(0, 100);
+    const numOne = numRandom(0, 100);
 
-    console.log(`Question: ${numTemp}`);
-    const answer = readlineSync.question('Your answer: ');
+    console.log(`Question: ${numOne}`);
 
     // проверяем число на чётность, и записываем результат в переменную
-    if (numTemp % 2 === 0) {
+    if (numOne % 2 === 0) {
       exam = 'yes';
     } else {
       exam = 'no';
     }
 
-    // проверяем полученный результат с вводом пользователя
-    if (answer === exam) {
-      console.log('Correct!');
-      result += 1;
-    } else {
-      console.log(`'yes' is wrong answer ;(. Correct answer was 'no'.\nLet's try again, ${name}!`);
-      break;
-    }
+   // Возвращаем правильный ответ для проверки
+   return { question: `${numOne}`, correctAnswer: exam };
   }
-  return result;
 }
 
 export default function startEvenGame() {

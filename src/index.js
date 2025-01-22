@@ -1,11 +1,5 @@
 import requestName from './games/cli.js';
 
-// поиск случайного числа в диапозоне до 100
-export const numRandom = () => {
-  const numLimit = 100;
-  return Math.floor(Math.random() * numLimit);
-};
-
 console.log('Welcome to the Brain Games!');
 export const name = requestName();
 

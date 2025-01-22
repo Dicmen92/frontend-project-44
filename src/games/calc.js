@@ -1,6 +1,5 @@
-import readlineSync from 'readline-sync';
 import numRandom from '../utils/random.js';
-import gameLoop, { name } from '../index.js';
+import gameLoop from '../index.js';
 
 // Игра: "Калькулятор"
 
@@ -9,14 +8,14 @@ const question = 'What is the result of the expression?';
 function makingGame() {
   // переменная для записи результа
   let exam = 0;
-  // переменная для проверки успешного выполнения условия игры
-  let result = 0;
 
-  for (let i = 0; i < 3; i += 1) {
+  // Генерация 3 вопросов
+  for (let i = 0; i < 3; i++) {
     const numOne = numRandom(0, 100);
     const numTwo = numRandom(0, 100);
     let sign = numRandom(0, 100);
 
+    // Определяем операцию +, - или *
     if (sign <= 33) {
       sign = '-';
     } else if (sign > 33 && sign <= 66) {
@@ -35,18 +34,9 @@ function makingGame() {
       exam = numOne * numTwo;
     }
 
-    const answer = readlineSync.question('Your answer: ');
-
-    // проверяем полученный результат с вводом пользователя
-    if (Number(answer) === exam) {
-      console.log('Correct!');
-      result += 1;
-    } else {
-      console.log(`'${answer}' is wrong answer ;(. Correct answer was '${exam}'.\nLet's try again, ${name}!`);
-      break;
-    }
+    // Возвращаем правильный ответ для проверки
+    return { question: `${numOne} ${sign} ${numTwo}`, correctAnswer: exam };
   }
-  return result;
 }
 
 export default function startCalcGame() {

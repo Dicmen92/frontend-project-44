@@ -6,7 +6,6 @@ import gameLoop from '../index.js';
 export const question = 'Find the greatest common divisor of given numbers.';
 
 export function makingGame() {
-  // переменная для записи результа
   let exam = 0;
 
   const numOne = getRandomNumber(0, 100);
@@ -17,7 +16,6 @@ export function makingGame() {
   let max = 0;
   let min = 0;
 
-  // определяем из двух большее число
   if (numOne > numTwo) {
     max = numOne;
     min = numTwo;
@@ -42,14 +40,11 @@ export function makingGame() {
       if (temp !== 0) {
         exam = temp;
       }
-
-    // как мининмум делится на 2, дополнительная проверка перед следующим условием
     } if (max % 2 === 0 && min % 2 === 0) {
       exam = 2;
     }
   }
 
-  // одно из чисел простое (делится только на само себя и единицу) - дополнительная проверка
   if (max % exam !== 0 || min % exam !== 0) {
     exam = 1;
   }

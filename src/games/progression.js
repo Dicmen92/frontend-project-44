@@ -6,7 +6,6 @@ import gameLoop from '../index.js';
 export const question = 'What number is missing in the progression?';
 
 export function makingGame() {
-  // переменная для записи результа
   let exam = 0;
 
   const numOne = getRandomNumber(0, 100);
@@ -28,7 +27,6 @@ export function makingGame() {
   console.log(`Question: ${arr.join(' ')}`);
 
   // Возвращаем вопрос и правильный ответ для проверки
-
   return { question: `${arr.join(' ')}`, correctAnswer: `${arrShow[temp]}` };
 }
 

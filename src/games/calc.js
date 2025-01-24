@@ -6,10 +6,8 @@ import gameLoop from '../index.js';
 const question = 'What is the result of the expression?';
 
 function makingGame() {
-  // переменная для записи результа
   let exam = 0;
 
-  // Генерация 3 вопросов
   const numOne = getRandomNumber(0, 100);
   const numTwo = getRandomNumber(0, 100);
   let sign = getRandomNumber(0, 100);

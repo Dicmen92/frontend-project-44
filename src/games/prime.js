@@ -6,10 +6,8 @@ import gameLoop from '../index.js';
 export const question = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 export function makingGame() {
-  // переменная для записи результа
   let exam = 0;
 
-  // присваиваем числу результат функции numRandom()
   const numOne = getRandomNumber(0, 100);
 
   console.log(`Question: ${numOne}`);
@@ -26,7 +24,6 @@ export function makingGame() {
       } else {
         exam = 'no';
         break;
-        // если при проверке число не простое то прерываем цикл
       }
     }
   }

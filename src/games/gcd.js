@@ -9,8 +9,10 @@ export function makingGame() {
   // переменная для записи результа
   let exam = 0;
 
-  const numOne = numRandom(0, 100);
-  const numTwo = numRandom(0, 100);
+  // const numOne = numRandom(0, 100);
+  // const numTwo = numRandom(0, 100);
+  const numOne = 64;
+  const numTwo = 34;
 
   console.log(`Question: ${numOne} ${numTwo}`);
 
@@ -42,6 +44,10 @@ export function makingGame() {
       if (temp !== 0) {
         exam = temp;
       }
+
+     // как мининмум делится на 2, дополнительная проверка перед следующим условием
+    } if (max % 2 === 0 && min % 2 === 0) {
+      exam = 2;
     }
   }
 

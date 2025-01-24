@@ -10,6 +10,8 @@ export const gameLoop = (question, makingGame) => {
   // определяем тип ответа
   let answer = '';
 
+  console.log(question);
+
   for (let i = 0; i < 3; i += 1) {
     // Получаем правильный ответ (при необходимости добавить переменную question
     // если захотим увидеть вопрос)
@@ -39,7 +41,7 @@ export const gameLoop = (question, makingGame) => {
       console.log('Correct!');
       result += 1;
     } else if (standardOut) {
-      console.log(`Answer 'yes' is wrong answer ;(. Correct answer was 'no'.\nLet's try again, ${name}!`);
+      console.log(`'yes' is wrong answer ;(. Correct answer was 'no'.\nLet's try again, ${name}!`);
       // Прерываем игру при неправильном ответе
       break;
     } else {

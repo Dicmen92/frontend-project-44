@@ -1,4 +1,4 @@
-import numRandom from '../utils/random.js';
+import getRandomNumber from '../utils/random.js';
 import gameLoop from '../index.js';
 
 // Игра "НОД"
@@ -9,8 +9,8 @@ export function makingGame() {
   // переменная для записи результа
   let exam = 0;
 
-  const numOne = numRandom(0, 100);
-  const numTwo = numRandom(0, 100); 
+  const numOne = getRandomNumber(0, 100);
+  const numTwo = getRandomNumber(0, 100);
 
   console.log(`Question: ${numOne} ${numTwo}`);
 
@@ -43,7 +43,7 @@ export function makingGame() {
         exam = temp;
       }
 
-     // как мининмум делится на 2, дополнительная проверка перед следующим условием
+    // как мининмум делится на 2, дополнительная проверка перед следующим условием
     } if (max % 2 === 0 && min % 2 === 0) {
       exam = 2;
     }

@@ -1,4 +1,4 @@
-import numRandom from '../utils/random.js';
+import getRandomNumber from '../utils/random.js';
 import gameLoop from '../index.js';
 
 // Игра: "Проверка на чётность"
@@ -10,7 +10,7 @@ function makingGame() {
   let exam = 0;
 
   // присваиваем числу результат функции numRandom()
-  const numOne = numRandom(0, 100);
+  const numOne = getRandomNumber(0, 100);
 
   console.log(`Question: ${numOne}`);
 

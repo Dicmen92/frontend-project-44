@@ -1,4 +1,4 @@
-import numRandom from '../utils/random.js';
+import getRandomNumber from '../utils/random.js';
 import gameLoop from '../index.js';
 
 // Игра "Арифметическая прогрессия"
@@ -9,8 +9,8 @@ export function makingGame() {
   // переменная для записи результа
   let exam = 0;
 
-  const numOne = numRandom(0, 100);
-  const numTwo = numRandom(0, 10);
+  const numOne = getRandomNumber(0, 100);
+  const numTwo = getRandomNumber(0, 10);
   const arr = [];
 
   exam = numOne;
@@ -21,7 +21,7 @@ export function makingGame() {
   }
 
   const arrShow = arr.concat([]);
-  const temp = numRandom(0, 10);
+  const temp = getRandomNumber(0, 10);
 
   arr[temp] = '..';
 

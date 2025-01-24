@@ -1,4 +1,4 @@
-import numRandom from '../utils/random.js';
+import getRandomNumber from '../utils/random.js';
 import gameLoop from '../index.js';
 
 // Игра: "Калькулятор"
@@ -10,9 +10,9 @@ function makingGame() {
   let exam = 0;
 
   // Генерация 3 вопросов
-  const numOne = numRandom(0, 100);
-  const numTwo = numRandom(0, 100);
-  let sign = numRandom(0, 100);
+  const numOne = getRandomNumber(0, 100);
+  const numTwo = getRandomNumber(0, 100);
+  let sign = getRandomNumber(0, 100);
 
   // Определяем операцию +, - или *
   if (sign <= 33) {

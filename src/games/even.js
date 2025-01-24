@@ -21,8 +21,10 @@ function makingGame() {
     exam = 'no';
   }
 
+  // Для фиксации вывода результата
+  const fix = 'yes';
   // Возвращаем правильный ответ для проверки
-  return { question: `${numOne}`, correctAnswer: exam };
+  return { question: `${numOne}`, correctAnswer: exam, standardOut: `${fix}` };
 }
 
 export default function startEvenGame() {

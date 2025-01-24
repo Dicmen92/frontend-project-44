@@ -27,9 +27,9 @@ export function makingGame() {
 
   console.log(`Question: ${arr.join(' ')}`);
 
-  // Возвращаем вопрос и правильный ответ для проверки 
+  // Возвращаем вопрос и правильный ответ для проверки
 
-  return { question: `${arr.join(' ')}`, correctAnswer: `${arrShow[temp]}`};
+  return { question: `${arr.join(' ')}`, correctAnswer: `${arrShow[temp]}` };
 }
 
 export default function startProgresGame() {

@@ -4,17 +4,17 @@ import requestName from './games/cli.js';
 console.log('Welcome to the Brain Games!');
 export const name = requestName();
 
-export const gameLoop = (question, makingGame) => {  
-
+export const gameLoop = (question, makingGame) => {
   // Счетчик правильных ответов
   let result = 0;
   // определяем тип ответа
   let answer = '';
 
   for (let i = 0; i < 3; i += 1) {
-    // Получаем правильный ответ (при необходимости добавить переменную question если захотим увидеть вопрос)
-    const { correctAnswer } = makingGame();
-    
+    // Получаем правильный ответ (при необходимости добавить переменную question
+    // если захотим увидеть вопрос)
+    const { correctAnswer, standardOut } = makingGame();
+
     // Запрашиваем ответ пользователя
     const userAnswer = readlineSync.question('Your answer: ');
 
@@ -29,8 +29,8 @@ export const gameLoop = (question, makingGame) => {
       answer = String(userAnswer);
     } else {
       answer = Number(userAnswer);
-    }   
-    
+    }
+
     if (Number.isNaN(answer)) {
       answer = String(userAnswer);
     }
@@ -38,6 +38,10 @@ export const gameLoop = (question, makingGame) => {
     if (answer === correctAnswer) {
       console.log('Correct!');
       result += 1;
+    } else if (standardOut) {
+      console.log(`'yes' is wrong answer ;(. Correct answer was 'no'.\nLet's try again, ${name}!`);
+      // Прерываем игру при неправильном ответе
+      break;
     } else {
       console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.\nLet's try again, ${name}!`);
       // Прерываем игру при неправильном ответе

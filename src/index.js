@@ -39,7 +39,7 @@ export const gameLoop = (question, makingGame) => {
       console.log('Correct!');
       result += 1;
     } else if (standardOut) {
-      console.log(`'yes' is wrong answer ;(. Correct answer was 'no'.\nLet's try again, ${name}!`);
+      console.log(`Answer 'yes' is wrong answer ;(. Correct answer was 'no'.\nLet's try again, ${name}!`);
       // Прерываем игру при неправильном ответе
       break;
     } else {

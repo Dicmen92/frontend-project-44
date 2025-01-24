@@ -9,10 +9,8 @@ export function makingGame() {
   // переменная для записи результа
   let exam = 0;
 
-  // const numOne = numRandom(0, 100);
-  // const numTwo = numRandom(0, 100);
-  const numOne = 64;
-  const numTwo = 34;
+  const numOne = numRandom(0, 100);
+  const numTwo = numRandom(0, 100); 
 
   console.log(`Question: ${numOne} ${numTwo}`);
 

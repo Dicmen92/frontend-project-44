@@ -10,8 +10,7 @@ function makingGame() {
   let exam = 0;
 
   // присваиваем числу результат функции numRandom()
-  // const numOne = numRandom(0, 100);
-  const numOne = 37;
+  const numOne = numRandom(0, 100);
 
   console.log(`Question: ${numOne}`);
 

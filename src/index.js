@@ -1,5 +1,5 @@
-import requestName from './games/cli.js';
 import readlineSync from 'readline-sync';
+import requestName from './games/cli.js';
 
 console.log('Welcome to the Brain Games!');
 export const name = requestName();
@@ -8,18 +8,18 @@ export const gameLoop = (question, makingGame) => {
   console.log(question);
 
   // Счетчик правильных ответов
-  let result = 0;  
+  let result = 0;
   // определяем тип ответа
   let answer = '';
 
-  for (let i = 0; i < 3; i++) {
+  for (let i = 0; i < 3; i += 1) {
     // Получаем вопрос и правильный ответ
-    const { correctAnswer } = makingGame(); 
+    const { correctAnswer } = makingGame();
 
     // Запрашиваем ответ пользователя
-    const userAnswer = readlineSync.question('Your answer: '); 
+    const userAnswer = readlineSync.question('Your answer: ');
 
-    if (!isNaN(userAnswer)) {
+    if (Number.isInteger(+userAnswer)) {
       answer = Number(userAnswer);
     } else {
       answer = String(userAnswer);

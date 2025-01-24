@@ -1,6 +1,5 @@
-import readlineSync from 'readline-sync';
 import numRandom from '../utils/random.js';
-import gameLoop, { name } from '../index.js';
+import gameLoop from '../index.js';
 
 // Игра "Простое ли число?"
 
@@ -9,43 +8,31 @@ export const question = 'Answer "yes" if given number is prime. Otherwise answer
 export function makingGame() {
   // переменная для записи результа
   let exam = 0;
-  // переменная для проверки успешного выполнения условия игры
-  let result = 0;
 
-  for (let i = 0; i < 3; i += 1) {
-    // присваиваем числу результат функции numRandom()
-    const numTemp = numRandom(0, 100);
+  // присваиваем числу результат функции numRandom()
+  const numOne = numRandom(0, 100);
 
-    console.log(`Question: ${numTemp}`);
-    const answer = readlineSync.question('Your answer: ');
+  console.log(`Question: ${numOne}`);
 
-    // проверяем число, которое должно делятся без остатка только на 1 и на само себя
-    if (numTemp === 1) {
-      exam = 'yes';
-    } else if (numTemp === 0) {
-      exam = 'no';
-    } else {
-      for (let index = 2; index <= numTemp / 2; index += 1) {
-        if (numTemp % index !== 0) {
-          exam = 'yes';
-        } else {
-          exam = 'no';
-          break;
-          // если при проверке число не простое то прерываем цикл
-        }
+  // проверяем число, которое должно делятся без остатка только на 1 и на само себя
+  if (numOne === 1) {
+    exam = 'yes';
+  } else if (numOne === 0) {
+    exam = 'no';
+  } else {
+    for (let index = 2; index <= numOne / 2; index += 1) {
+      if (numOne % index !== 0) {
+        exam = 'yes';
+      } else {
+        exam = 'no';
+        break;
+        // если при проверке число не простое то прерываем цикл
       }
     }
-
-    // проверяем полученный результат с вводом пользователя
-    if (answer === exam) {
-      console.log('Correct!');
-      result += 1;
-    } else {
-      console.log(`'yes' is wrong answer ;(. Correct answer was 'no'.\nLet's try again, ${name}!`);
-      break;
-    }
   }
-  return result;
+
+  // Возвращаем правильный ответ для проверки
+  return { question: `${numOne}`, correctAnswer: exam };
 }
 
 export default function startPrimeGame() {

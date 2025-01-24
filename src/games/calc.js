@@ -10,33 +10,31 @@ function makingGame() {
   let exam = 0;
 
   // Генерация 3 вопросов
-  for (let i = 0; i < 3; i++) {
-    const numOne = numRandom(0, 100);
-    const numTwo = numRandom(0, 100);
-    let sign = numRandom(0, 100);
+  const numOne = numRandom(0, 100);
+  const numTwo = numRandom(0, 100);
+  let sign = numRandom(0, 100);
 
-    // Определяем операцию +, - или *
-    if (sign <= 33) {
-      sign = '-';
-    } else if (sign > 33 && sign <= 66) {
-      sign = '+';
-    } else {
-      sign = '*';
-    }
-
-    console.log(`Question: ${numOne} ${sign} ${numTwo}`);
-
-    if (sign === '-') {
-      exam = numOne - numTwo;
-    } else if (sign === '+') {
-      exam = numOne + numTwo;
-    } else {
-      exam = numOne * numTwo;
-    }
-
-    // Возвращаем правильный ответ для проверки
-    return { question: `${numOne} ${sign} ${numTwo}`, correctAnswer: exam };
+  // Определяем операцию +, - или *
+  if (sign <= 33) {
+    sign = '-';
+  } else if (sign > 33 && sign <= 66) {
+    sign = '+';
+  } else {
+    sign = '*';
   }
+
+  console.log(`Question: ${numOne} ${sign} ${numTwo}`);
+
+  if (sign === '-') {
+    exam = numOne - numTwo;
+  } else if (sign === '+') {
+    exam = numOne + numTwo;
+  } else {
+    exam = numOne * numTwo;
+  }
+
+  // Возвращаем правильный ответ для проверки
+  return { question: `${numOne} ${sign} ${numTwo}`, correctAnswer: exam };
 }
 
 export default function startCalcGame() {

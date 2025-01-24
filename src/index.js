@@ -4,8 +4,7 @@ import requestName from './games/cli.js';
 console.log('Welcome to the Brain Games!');
 export const name = requestName();
 
-export const gameLoop = (question, makingGame) => {
-  console.log(question);
+export const gameLoop = (question, makingGame) => {  
 
   // Счетчик правильных ответов
   let result = 0;
@@ -13,15 +12,26 @@ export const gameLoop = (question, makingGame) => {
   let answer = '';
 
   for (let i = 0; i < 3; i += 1) {
-    // Получаем вопрос и правильный ответ
+    // Получаем правильный ответ (при необходимости добавить переменную question если захотим увидеть вопрос)
     const { correctAnswer } = makingGame();
-
+    
     // Запрашиваем ответ пользователя
     const userAnswer = readlineSync.question('Your answer: ');
 
-    if (Number.isInteger(+userAnswer)) {
-      answer = Number(userAnswer);
+    // Условие проверки на число
+    // if (Number.isInteger(+userAnswer)) {
+    //   answer = Number(userAnswer);
+    // } else {
+    //   answer = String(userAnswer);
+    // }
+
+    if (typeof correctAnswer === 'string') {
+      answer = String(userAnswer);
     } else {
+      answer = Number(userAnswer);
+    }   
+    
+    if (Number.isNaN(answer)) {
       answer = String(userAnswer);
     }
 

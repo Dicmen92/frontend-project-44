@@ -30,7 +30,8 @@ const convertArray = (arr) => {
 export function makingGame() {
   const numOne = getRandomNumber(0, 100);
   const step = getRandomNumber(0, 10);
-  const arrLength = getRandomNumber(3, 10);
+  const arrLength = getRandomNumber(5, 10);
+
   const arr = getProgression(numOne, step, arrLength);
   const arrShow = convertArray(arr);
 

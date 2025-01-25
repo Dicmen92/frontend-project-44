@@ -3,10 +3,9 @@ import gameLoop from '../index.js';
 
 // Игра "НОД"
 
-const gcd = (numOne, numTwo) => {
-  let a = numOne;
-  let b = numTwo;
-
+const gcd = (a, b) => {
+  a = a;
+  b = b;
   while (b !== 0) {
     const temp = b;
     b = numOne % b;

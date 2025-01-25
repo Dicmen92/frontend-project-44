@@ -20,12 +20,20 @@ function makingGame() {
 
   const sign = getRandomOperation();
 
-  if (sign === '-') {
-    exam = numOne - numTwo;
-  } else if (sign === '+') {
-    exam = numOne + numTwo;
-  } else {
-    exam = numOne * numTwo;
+  switch(sign) {
+    case '-':
+      exam = numOne - numTwo;
+      break;
+    case '+':
+      exam = numOne + numTwo;
+      break;
+    case '*':
+      exam = numOne * numTwo;
+      break;
+    default:
+      // значение по умолчанию, если операция не распознана
+      exam = 0;
+      break;
   }
 
   console.log(`Question: ${numOne} ${sign} ${numTwo}`);

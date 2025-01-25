@@ -8,7 +8,7 @@ const gcd = (a, b) => {
   b = b;
   while (b !== 0) {
     const temp = b;
-    b = numOne % b;
+    b = a % b;
     a = temp;
   }
   return a;

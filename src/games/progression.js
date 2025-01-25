@@ -5,7 +5,9 @@ import gameLoop from '../index.js';
 
 export const question = 'What number is missing in the progression?';
 
-// const getProgression
+// const getProgression = (initial) {
+
+// };
 
 export function makingGame() {
   let exam = 0;

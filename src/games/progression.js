@@ -5,40 +5,37 @@ import gameLoop from '../index.js';
 
 export const question = 'What number is missing in the progression?';
 
-const getProgression = (initial, step, numЕlem) => {
+const getProgression = (initialNum, step, numЕlem) => {
   const arr = [];
-  
+  let init = initialNum;
+
   for (let index = 0; index < numЕlem; index += 1) {
-    initial += initial + step;
-    arr.push[initial];
+    init += step;
+    arr.push(init);
   }
 
   return arr;
 };
 
+const convertArray = (arr) => {
+  const result = arr;
+  const arrShow = result.concat([]);
+  const temp = getRandomNumber(0, result.length - 1);
+  result[temp] = '..';
+  console.log(`Question: ${result.join(' ')}`);
+
+  return arrShow[temp];
+};
+
 export function makingGame() {
-  let exam = 0;
-
   const numOne = getRandomNumber(0, 100);
-  const numTwo = getRandomNumber(0, 10);
-  const arr = [];
-
-  exam = numOne;
-
-  for (let index = 0; index < 10; index += 1) {
-    exam += numTwo;
-    arr.push(exam);
-  }
-
-  const arrShow = arr.concat([]);
-  const temp = getRandomNumber(0, 10);
-
-  arr[temp] = '..';
-
-  console.log(`Question: ${arr.join(' ')}`);
+  const step = getRandomNumber(0, 10);
+  const arrLength = getRandomNumber(3, 10);
+  const arr = getProgression(numOne, step, arrLength);
+  const arrShow = convertArray(arr);
 
   // Возвращаем вопрос и правильный ответ для проверки
-  return { question: `${arr.join(' ')}`, correctAnswer: `${arrShow[temp]}` };
+  return { question: `${arr.join(' ')}`, correctAnswer: `${arrShow}` };
 }
 
 export default function startProgresGame() {

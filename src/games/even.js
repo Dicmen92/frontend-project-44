@@ -6,17 +6,13 @@ import gameLoop from '../index.js';
 const question = 'Answer "yes" if the number is even, otherwise answer "no".';
 
 function makingGame() {
-  let exam = 0;
 
   const numOne = getRandomNumber(0, 100);
 
   console.log(`Question: ${numOne}`);
 
-  if (numOne % 2 === 0) {
-    exam = 'yes';
-  } else {
-    exam = 'no';
-  }
+  const isEven = num => num % 2 === 0;
+  const exam = isEven(numOne) ? 'yes' : 'no';
 
   // Для фиксации вывода результата
   const fix = 'yes';

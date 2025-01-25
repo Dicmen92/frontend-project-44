@@ -5,31 +5,35 @@ import gameLoop from '../index.js';
 
 export const question = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
-export function makingGame() {
-  let exam = 0;
+// Бизнес-логика: проверка на простое число
+const isPrime = (num) => {
+  if (num === 1) {
+    return 'yes'; //
+  }
+  if (num === 0) {
+    return 'no';
+  }
 
+  for (let index = 2; index <= Math.sqrt(num); index += 1) {
+    if (num % index === 0) {
+      // Если число делится на index, оно не простое
+      return 'no';
+    }
+  }
+
+  return 'yes';
+};
+
+export function makingGame() {
   const numOne = getRandomNumber(0, 100);
 
   console.log(`Question: ${numOne}`);
 
-  // проверяем число, которое должно делятся без остатка только на 1 и на само себя
-  if (numOne === 1) {
-    exam = 'yes';
-  } else if (numOne === 0) {
-    exam = 'no';
-  } else {
-    for (let index = 2; index <= numOne / 2; index += 1) {
-      if (numOne % index !== 0) {
-        exam = 'yes';
-      } else {
-        exam = 'no';
-        break;
-      }
-    }
-  }
+  // Проверка числа с помощью бизнес-логики
+  const exam = isPrime(numOne);
 
   // Возвращаем правильный ответ для проверки
-  return { question: `${numOne}`, correctAnswer: exam };
+  return { question: `Is ${numOne} a prime number?`, correctAnswer: exam };
 }
 
 export default function startPrimeGame() {

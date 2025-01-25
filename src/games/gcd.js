@@ -4,18 +4,17 @@ import gameLoop from '../index.js';
 // Игра "НОД"
 
 const gcd = (a, b) => {
-  while (b !== 0) {
+  while (b !== 0) {    
     const temp = b;
     b = a % b;
     a = temp;
-  }
+  };
   return a;
 }
 
 export const question = 'Find the greatest common divisor of given numbers.';
 
 export function makingGame() {
-
   const numOne = getRandomNumber(0, 100);
   const numTwo = getRandomNumber(0, 100);
 

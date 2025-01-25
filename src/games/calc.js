@@ -20,7 +20,7 @@ function makingGame() {
 
   const sign = getRandomOperation();
 
-  switch(sign) {
+  switch (sign) {
     case '-':
       exam = numOne - numTwo;
       break;

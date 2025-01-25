@@ -10,7 +10,7 @@ function makingGame() {
 
   console.log(`Question: ${numOne}`);
 
-  const isEven = num => (num % 2 === 0);
+  const isEven = (num) => num % 2 === 0;
   const exam = isEven(numOne) ? 'yes' : 'no';
 
   // Для фиксации вывода результата

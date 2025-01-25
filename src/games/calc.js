@@ -10,18 +10,15 @@ function makingGame() {
 
   const numOne = getRandomNumber(0, 100);
   const numTwo = getRandomNumber(0, 100);
-  let sign = getRandomNumber(0, 100);
 
   // Определяем операцию +, - или *
-  if (sign <= 33) {
-    sign = '-';
-  } else if (sign > 33 && sign <= 66) {
-    sign = '+';
-  } else {
-    sign = '*';
-  }
+  const getRandomOperation = () => {
+    const operation = ['+', '-', '*'];
+    const randomIndex = Math.floor(Math.random() * operation.length);
+    return operation[randomIndex];
+  };
 
-  console.log(`Question: ${numOne} ${sign} ${numTwo}`);
+  const sign = getRandomOperation();
 
   if (sign === '-') {
     exam = numOne - numTwo;
@@ -30,6 +27,8 @@ function makingGame() {
   } else {
     exam = numOne * numTwo;
   }
+
+  console.log(`Question: ${numOne} ${sign} ${numTwo}`);
 
   // Возвращаем правильный ответ для проверки
   return { question: `${numOne} ${sign} ${numTwo}`, correctAnswer: exam };
